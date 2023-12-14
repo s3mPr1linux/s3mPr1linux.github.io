@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+
+body {
+  background: linear-gradient(45deg, #030303 0%,#f58646 100%);
+  font-family: Ubuntu;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#terminal {
+  width: 90vw;
+  height: 80vh;
+  box-shadow: 2px 4px 10px rgba(0,0,0,0.5);
+}
+
+#terminal__bar {
+  display: flex;
+  width: 100%;
+  height: 30px;
+  align-items: center;
+  padding: 0 8px;
+  box-sizing: border-box;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background: linear-gradient(#504b45 0%,#3c3b37 100%);
+}
+
+#bar__buttons {
+  display: flex;
+  align-items: center;
+}
+
+.bar__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin-right: 5px;
+  font-size: 8px;
+  height: 12px;
+  width: 12px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 100%;
+  background: linear-gradient(#7d7871 0%, #595953 100%);
+  text-shadow: 0px 1px 0px rgba(255,255,255,0.2);
+  box-shadow: 0px 0px 1px 0px #41403A, 0px 1px 1px 0px #474642;
+}
+.bar__button:hover {
+  cursor: pointer;
+}
+.bar__button:focus {
+  outline: none;
+}
+#bar__button--exit {
+  background: linear-gradient(#f37458 0%, #de4c12 100%);
+  background-clip: padding-box;
+}
+
+#bar__user {
+  color: #d5d0ce;
+  margin-left: 6px;
+  font-size: 14px;
+  line-height: 15px;
+}
+
+#terminal__body {
+  background: rgba(56, 4, 40, 0.9);
+  font-family: 'Ubuntu Mono';
+  height: calc(100% - 30px);
+  padding-top: 2px;
+  margin-top: -1px;
+}
+
+#terminal__prompt {
+  display: flex;
+}
+#terminal__prompt--user {
+  color: #7eda28;
+}
+#terminal__prompt--location {
+  color: #4878c0;
+}
+#terminal__prompt--bling {
+  color: #dddddd;
+}
+#terminal__prompt--command {
+  color: #dddddd;
+}
+#terminal__prompt--ls {
+  color: #dddddd;
+}
+a { text-decoration: none }
+a:hover { text-decoration: underline }
+
+a.dir { color: #2a2af0; text-decoration: none }
+a.dir:hover { text-decoration: underline }
+a.dir:visited { color: #0000FF }
+
+a.file { color: #FFFFFF; text-decoration: none }
+a.file:hover { text-decoration: underline }
+a.file:visited { color: #FFFFFF }
+
+a.exe { color: #00FF00; text-decoration: none }
+a.exe:hover { text-decoration: underline }
+a.exe:visited { color: #00FF00 }
+
+a.lks { color: #00FFFF; text-decoration: none }
+a.lks:hover { text-decoration: underline }
+a.lks:visited { color: #00FFFF }
+
+a.pic { color: #FF00FF; text-decoration: none }
+a.pic:hover { text-decoration: underline }
+a.pic:visited { color: #FF00FF }
+ 
