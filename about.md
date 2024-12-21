@@ -3,4 +3,4 @@ layout: page
 title: About
 ---
 
-IT professional specialized in Cybersecurity.
+Just a passionate hacker.
