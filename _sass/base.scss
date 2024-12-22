@@ -5,6 +5,13 @@
 @import "rouge-base16-dark";
 @import "default_colors";
 
+$base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$base-font-size:   16px !default;
+$base-font-weight: 400 !default;
+$small-font-size:  $base-font-size * 0.875 !default;
+$base-line-height: 1.5 !default;
+
+
 $body-background: $cod-grey !default;
 $body-foreground: $gallery !default;
 $header: $conifer !default;
@@ -20,6 +27,17 @@ $grey-color-dark:  darken($grey-color, 25%) !default;
 
 $on-palm:          600px !default;
 $on-laptop:        800px !default;
+
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+@mixin relative-font-size($ratio) {
+  font-size: $base-font-size * $ratio;
+}
+
 
 body {
   margin: 0;
