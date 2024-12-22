@@ -1077,3 +1077,14 @@ a {
     padding-top: 5px;
   }
 }
+
+
+/**
+ * Clearfix
+ */
+ %clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
