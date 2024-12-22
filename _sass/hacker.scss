@@ -984,3 +984,29 @@ button.close{padding:0;cursor:pointer;background:transparent;border:0;-webkit-ap
     width: -webkit-calc(45% - (#{$spacing-unit} / 2));
     width:         calc(45% - (#{$spacing-unit} / 2));
   }
+
+  /**
+ * Links
+ */
+a {
+    color: $brand-color;
+    text-decoration: none;
+  
+    &:visited {
+      color: darken($brand-color, 15%);
+    }
+  
+    &:hover {
+      color: $text-color;
+      text-decoration: underline;
+    }
+  
+    .social-media-list &:hover {
+      text-decoration: none;
+  
+      .username {
+        text-decoration: underline;
+      }
+    }
+  }
+  
