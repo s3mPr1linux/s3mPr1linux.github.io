@@ -4,6 +4,7 @@ author:
   name: "s3mPr1linux"
   email: "s3mPr1linux@gmail.com"
   url: "https://s3mpr1linux.github.io/"
+  github_username:  jekyll
 
 baseurl: /
 
