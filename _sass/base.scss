@@ -13,8 +13,13 @@ $blockquote-border: $dove-grey !default;
 $spacing-unit:      30px !default;
 $brand-color:       #2a7ae2 !default;
 $text-color:       #111 !default;
-$grey-color:       #828282 !default;
 
+$grey-color:       #828282 !default;
+$grey-color-light: lighten($grey-color, 40%) !default;
+$grey-color-dark:  darken($grey-color, 25%) !default;
+
+$on-palm:          600px !default;
+$on-laptop:        800px !default;
 
 body {
   margin: 0;
