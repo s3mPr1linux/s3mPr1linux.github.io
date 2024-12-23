@@ -7,7 +7,6 @@ title: About
 ![](/assets/hacker.png) Just a ethical hacker!
 
 <br/>
-<br/>
 
 [Portfolio](https://rodrigosilvaluz4.github.io/)
 [Github](https://github.com/rodrigosilvaluz4)
