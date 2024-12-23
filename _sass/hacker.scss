@@ -1054,3 +1054,13 @@ a {
     vertical-align: text-top;
 }
 
+
+/**
+ * Clearfix
+ */
+ %clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
