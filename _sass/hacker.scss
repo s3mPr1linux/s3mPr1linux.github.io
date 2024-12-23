@@ -978,43 +978,6 @@ button.close{padding:0;cursor:pointer;background:transparent;border:0;-webkit-ap
     margin-bottom: $spacing-unit * 0.5;
   }
   
-  /*
-  .contact-list,
-  .social-media-list {
-    list-style: none;
-    margin-left: 0;
-  }
-  
-  */
-
-  .footer-col-wrapper {
-    @include relative-font-size(0.9375);
-    color: $grey-color;
-    margin-left: -$spacing-unit * 0.5;
-    @extend %clearfix;
-  }
-  
-  .footer-col {
-    float: left;
-    margin-bottom: $spacing-unit * 0.5;
-    padding-left: $spacing-unit * 0.5;
-  }
-  
-  .footer-col-1 {
-    width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-    width:         calc(35% - (#{$spacing-unit} / 2));
-  }
-  
-  .footer-col-2 {
-    width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-    width:         calc(20% - (#{$spacing-unit} / 2));
-  }
-  
-  .footer-col-3 {
-    width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-    width:         calc(45% - (#{$spacing-unit} / 2));
-  }
-  
    
   /**
  * Links
@@ -1054,13 +1017,3 @@ a {
     vertical-align: text-top;
 }
 
-
-/**
- * Clearfix
- */
- %clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
