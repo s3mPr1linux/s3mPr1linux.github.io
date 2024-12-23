@@ -5,4 +5,4 @@ title: About
 
 
 ![](/assets/hacker.png) Just a ethical hacker!
-![](https://rodrigosilvaluz4.github.io/)
+![](/assets/EU_IA.png)![](https://rodrigosilvaluz4.github.io/)
