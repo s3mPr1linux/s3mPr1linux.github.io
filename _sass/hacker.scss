@@ -964,10 +964,8 @@ button.close{padding:0;cursor:pointer;background:transparent;border:0;-webkit-ap
 .visible-print-inline-block{display:none !important}@media print{.visible-print-inline-block{display:inline-block !important}}
 @media print{.hidden-print{display:none !important}}
 
+/*
 
-/**
- * Site footer
- */
  .site-footer {
     border-top: 1px solid $grey-color-light;
     padding: $spacing-unit 0;
@@ -977,7 +975,8 @@ button.close{padding:0;cursor:pointer;background:transparent;border:0;-webkit-ap
     @include relative-font-size(1.125);
     margin-bottom: $spacing-unit * 0.5;
   }
-  
+
+*/
    
   /**
  * Links
