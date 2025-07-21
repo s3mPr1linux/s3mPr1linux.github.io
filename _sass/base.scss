@@ -72,10 +72,11 @@ header {
   display: inline;
 }
 
-.header-right .logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.header-logo {
+  margin-bottom: 10px;
+}
+
+.logo {
   max-height: 120px; /* ajusta conforme seu logo */
 }
 
