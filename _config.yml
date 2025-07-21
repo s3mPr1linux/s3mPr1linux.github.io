@@ -1,5 +1,5 @@
 title: Blog s3mPr1linux
-description: "A Cybersecurity, a Blog For Hackers and not Hackers."
+description: "Blog For Hackers and not Hackers."
 author:
   name: "s3mPr1linux"
   email: "s3mPr1linux@gmail.com"
@@ -28,7 +28,9 @@ plugins:
   - jekyll-seo-tag
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-feed
+  - jeyll-avatar
 
 # Custom variables
 owner : "s3mPr1linux"
-year : "2024"
+year : "2025"
