@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 {% include head.html %}
-
 <body>  
   <div id="wrapper">
     {% include header.html %}
@@ -11,7 +10,6 @@
       </section>
     </div>
   </div>
-
   {% if paginator.total_pages > 1 %}
   <div class="pagination">
     {% if paginator.previous_page == 1 %}
@@ -33,10 +31,8 @@
     {% endif %}
   </div>
   {% endif %} {% include footer.html %}
-
   {% if site.google_analytics %}
     {% include analytics.html %}
   {% endif %}
 </body>
-
 </html>
