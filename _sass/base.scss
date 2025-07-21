@@ -23,7 +23,7 @@ body {
   padding: 0;
   background: $body-background url("../assets/bkg.png") 0 0;
   color: $body-foreground;
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.5;
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
 }
@@ -72,11 +72,11 @@ header {
 }
 
 .header-logo {
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
 .logo {
-  max-height: 160px; /* ajusta conforme seu logo */
+  max-height: 165px; /* ajusta conforme seu logo */
 }
 
 header h1 {
@@ -108,7 +108,7 @@ header h2 {
   -webkit-font-smoothing: antialiased;
 }
 section img {
-  max-width: 100%
+  max-width: 110%
 }
 
 h1, h2, h3, h4, h5, h6 {
