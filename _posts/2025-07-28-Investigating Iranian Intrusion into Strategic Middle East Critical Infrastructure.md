@@ -6,7 +6,7 @@ published: true
 > _"Os conflitos modernos não se limitam mais a campos de batalha físicos. A guerra agora se estende pelas fibras óticas do mundo."_  
 
 Em uma operação meticulosa e persistente, pesquisadores da FortiGuard Incident Response (FGIR) revelaram um ataque sofisticado contra uma infraestrutura crítica nacional (CNI) no Oriente Médio, possivelmente conduzido por um grupo de Ameaça Persistente Avançada (APT) patrocinado pelo estado iraniano — identificado como **Lemon Sandstorm**.
-
+<hr />
 ## 📌 Contexto do Caso
 
 Em novembro de 2024, um servidor Microsoft Exchange emitiu sinais de comportamento anômalo. A investigação subsequente revelou que a rede da vítima estava comprometida desde, pelo menos, **maio de 2023** — com indícios que remontam até 2021.
