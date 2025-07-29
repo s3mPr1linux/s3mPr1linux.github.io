@@ -1,6 +1,8 @@
 ---
 title: Investigando uma Intrusão de Longo Prazo em Infraestruturas Críticas do Oriente Médio
 published: true
+tags:
+  - Critical Infrastructure
 ---
 
 > _"Os conflitos modernos não se limitam mais a campos de batalha físicos. A guerra agora se estende pelas fibras óticas do mundo."_  
