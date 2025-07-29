@@ -72,7 +72,7 @@ O relatório não apenas expõe a profundidade da intrusão, mas também oferece
 
  Fortinet FortiGuard Labs. _Investigating Iranian Intrusion into Strategic Middle East Critical Infrastructure_, 2025.  
  📎 [Download do Relatório (PDF)](https://www.fortinet.com/content/dam/fortinet/assets/reports/report-incident-response-middle-east.pdf)
- [MITRE ATT&CK Framework](https://attack.mitre.org)
- [CISA Advisory AA24-241A](https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-241a)
+ - [MITRE ATT&CK Framework](https://attack.mitre.org)
+ - [CISA Advisory AA24-241A](https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-241a)
 
 ---
