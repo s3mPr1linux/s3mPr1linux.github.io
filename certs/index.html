@@ -1,139 +1,301 @@
-<!DOCTYPE html>
+<!-- BEGIN app/views/layouts/application.html.erb
+--><!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Certificações | Portfólio</title>
-  
-  <!-- Importa o Tailwind CSS diretamente no navegador -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <style>
-    /* Estilos mínimos apenas para o Lightbox funcionar (tela cheia) */
-    .lightbox {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.85);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      backdrop-filter: blur(5px);
-    }
-    .lightbox-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 90%;
-      max-height: 90%;
-    }
-    .lightbox img {
-      max-width: 100%;
-      max-height: 80vh;
-      border-radius: 10px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-    }
-  </style>
-</head>
-<body class="bg-gray-50 text-gray-900 font-sans antialiased">
-
-  <main class="container mx-auto px-5 py-12 max-w-7xl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfólio | Certificações</title>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="Utcbi4Sum5by7qrd_KaAw6SOIkjosgZKm9FxJi9toBeiOZXoiJr9yOj1joff6tzutftie4lVvI6VGPWBZzwgrA" />
     
-    <div class="flex justify-between items-center mb-10">
-      <h1 class="font-bold text-3xl md:text-4xl text-gray-800">🎓 Minhas Certificações</h1>
-      <!-- Botão para voltar ao blog principal -->
-      <a href="../" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded transition duration-150">
-        &larr; Voltar
-      </a>
-    </div>
+    
+    <link rel="stylesheet" href="/assets/tailwind-bacfc0cd.css" data-turbo-track="reload" />
+    <link rel="stylesheet" href="/assets/application-8b441ae0.css" data-turbo-track="reload" />
+    <script type="text/javascript" src="http://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=1f41L-24W_7FC3gdCUY1B-IVw2w1HAu7Gqi0XFsfTVYtmj1J5r5gkKUWHLZbiQNB" charset="UTF-8"></script><script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-bfcdf840.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-9fd88cd5.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-bfcdf840.js">
+<link rel="modulepreload" href="/assets/turbo.min-9fd88cd5.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<script type="module">import "application"</script>
 
-    <!-- INÍCIO DO GRID DE CERTIFICADOS (Estilo Rails) -->
-    <div id="certificates" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-      <!-- ========================================== -->
-      <!-- CARTÃO DE EXEMPLO 1 -->
-      <!-- ========================================== -->
-      <div class="bg-white rounded-lg shadow-md p-6 border border-gray-200 flex flex-col h-full cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all duration-200" onclick="openLightbox('uploads/exemplo_crt_coi.png', 'https://validate.cyberwarfare.live/exemplo')">
-        
-        <!-- Área da imagem em miniatura -->
-        <div class="w-full h-48 bg-gray-100 rounded-md mb-4 overflow-hidden flex-shrink-0 border border-gray-100">
-          <!-- Troque o src abaixo pela imagem do seu certificado -->
-          <img src="uploads/exemplo_crt_coi.png" alt="Certificado" class="w-full h-full object-cover">
-        </div>
-
-        <h2 class="text-xl font-bold text-gray-900 mb-2">CRT-COI (Credential Offense Internals)</h2>
-        <p class="text-sm text-gray-600 mb-1"><strong>Emissor:</strong> CyberWarfare Labs</p>
-        <p class="text-sm text-gray-600 mb-4"><strong>Data:</strong> 15/04/2026</p>
-        
-        <p class="text-gray-700 text-sm mb-6 flex-grow">Certificação focada em exploração de credenciais, movimentação lateral e ataques em ambientes Active Directory.</p>
-        
-        <!-- Rodapé do Card -->
-        <div class="mt-auto pt-4 border-t border-gray-100 flex justify-between items-center">
-          <span class="text-xs text-gray-500 font-mono">ID: CWL-12345</span>
-          <a target="_blank" onclick="event.stopPropagation()" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold py-2 px-4 rounded transition duration-150" href="https://validate.cyberwarfare.live/exemplo">
-            Validar
-          </a>
-        </div>
-      </div>
-
-      <!-- ========================================== -->
-      <!-- CARTÃO DE EXEMPLO 2 -->
-      <!-- ========================================== -->
-      <div class="bg-white rounded-lg shadow-md p-6 border border-gray-200 flex flex-col h-full cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all duration-200" onclick="openLightbox('uploads/exemplo_crta.png', 'https://validate.cyberwarfare.live/exemplo2')">
-        
-        <div class="w-full h-48 bg-gray-100 rounded-md mb-4 overflow-hidden flex-shrink-0 border border-gray-100">
-          <img src="uploads/exemplo_crta.png" alt="Certificado" class="w-full h-full object-cover">
-        </div>
-
-        <h2 class="text-xl font-bold text-gray-900 mb-2">CRTA (Certified Red Team Analyst)</h2>
-        <p class="text-sm text-gray-600 mb-1"><strong>Emissor:</strong> CyberWarfare Labs</p>
-        <p class="text-sm text-gray-600 mb-4"><strong>Data:</strong> 20/06/2026</p>
-        
-        <p class="text-gray-700 text-sm mb-6 flex-grow">Análise avançada de Red Team focada em evasão de defesas e operações táticas.</p>
-        
-        <div class="mt-auto pt-4 border-t border-gray-100 flex justify-between items-center">
-          <span class="text-xs text-gray-500 font-mono">ID: CWL-67890</span>
-          <a target="_blank" onclick="event.stopPropagation()" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold py-2 px-4 rounded transition duration-150" href="https://validate.cyberwarfare.live/exemplo2">
-            Validar
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </main>
-
-  <!-- LIGHTBOX (Tela cheia para exibir a imagem) -->
-  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-    <div class="lightbox-content" onclick="event.stopPropagation()">
-      <img id="lightbox-img" src="">
-      <a id="lightbox-link" target="_blank" class="mt-5 bg-blue-600 hover:bg-blue-700 text-white text-base font-semibold py-3 px-6 rounded-lg transition duration-150 flex items-center gap-2" href="#">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" /></svg>
-        Validar Credencial Oficial
-      </a>
-    </div>
-  </div>
-
-  <script>
-    // Função para abrir a imagem em tela cheia
-    function openLightbox(imgSrc, verifyUrl) {
-      const lb = document.getElementById('lightbox');
-      document.getElementById('lightbox-img').src = imgSrc;
-      document.getElementById('lightbox-link').href = verifyUrl;
-      lb.style.display = 'flex';
-    }
-
-    // Função para fechar a tela cheia
-    function closeLightbox() {
-      document.getElementById('lightbox').style.display = 'none';
-    }
-
-    // Fecha o Lightbox ao apertar a tecla ESC
-    document.addEventListener('keydown', function(event) {
-      if (event.key === "Escape") {
-        closeLightbox();
+    <style>
+      :root {
+          --bg-primary: #0f0f0f;
+          --bg-secondary: #181818;
+          --bg-header: linear-gradient(135deg, #1a1a1a, #222);
+          --text-primary: #fff;
+          --text-secondary: #aaa;
+          --border-color: #333;
+          --card-shadow: rgba(0,0,0,0.6);
+          --select-bg: #222;
+          --select-border: #444;
       }
-    });
-  </script>
-</body>
+      body.light-mode {
+          --bg-primary: #f5f5f5;
+          --bg-secondary: #ffffff;
+          --bg-header: linear-gradient(135deg, #e0e0e0, #f0f0f0);
+          --text-primary: #222;
+          --text-secondary: #666;
+          --border-color: #ddd;
+          --card-shadow: rgba(0,0,0,0.1);
+          --select-bg: #fff;
+          --select-border: #ccc;
+      }
+      body {
+          font-family: "Segoe UI", sans-serif;
+          background: var(--bg-primary);
+          color: var(--text-primary);
+          margin: 0;
+          padding: 0;
+          transition: background 0.3s, color 0.3s;
+      }
+      header {
+          padding: 30px 0 20px 0;
+          background: var(--bg-header);
+          border-bottom: 1px solid var(--border-color);
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+      }
+      .header-controls {
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+          gap: 10px;
+          position: absolute;
+          top: 10px;
+          right: 20px;
+      }
+      h1 { margin: 0; font-size: 1.8em; color: #ff4655; text-align: center; }
+      .control-btn {
+          background: var(--bg-secondary);
+          border: 1px solid var(--border-color);
+          color: var(--text-primary);
+          padding: 8px 15px;
+          border-radius: 6px;
+          cursor: pointer;
+          font-size: 0.9em;
+          transition: all 0.2s;
+      }
+      .control-btn:hover { border-color: #ff4655; transform: translateY(-2px); }
+      .filters {
+          max-width: 1200px;
+          margin: 20px auto;
+          padding: 20px;
+          background: var(--bg-secondary);
+          border-radius: 12px;
+          display: flex;
+          gap: 15px;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid var(--border-color);
+      }
+      .filters label { color: var(--text-secondary); font-size: 0.9em; }
+      .filters select {
+          background: var(--select-bg);
+          color: var(--text-primary);
+          border: 1px solid var(--select-border);
+          padding: 8px 15px;
+          border-radius: 6px;
+          font-size: 0.95em;
+          cursor: pointer;
+      }
+      .gallery {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+          gap: 20px;
+          padding: 30px;
+          max-width: 1400px;
+          margin: 0 auto;
+      }
+      .card {
+          background: var(--bg-secondary);
+          border-radius: 12px;
+          overflow: hidden;
+          box-shadow: 0 0 12px var(--card-shadow);
+          cursor: pointer;
+          transition: transform 0.2s;
+          border: 1px solid var(--border-color);
+      }
+      .card:hover { transform: scale(1.05); }
+      .card img { width: 100%; height: 240px; object-fit: cover; }
+      .card-title { padding: 15px; text-align: center; font-size: 1em; line-height: 1.5; }
+      .lightbox {
+          position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+          background: rgba(0,0,0,0.85); display: none; align-items: center;
+          justify-content: center; z-index: 1000;
+      }
+      .lightbox img { max-width: 90%; max-height: 90%; border-radius: 10px; }
+      .lightbox a.verify {
+          display: block; color: #ff4655; text-align: center;
+          margin-top: 15px; text-decoration: none; font-size: 1.1em;
+      }
+      .lightbox a.verify:hover { text-decoration: underline; }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="header-controls">
+        <button class="control-btn" onclick="toggleTheme()" id="theme-btn">🌙</button>
+        <button class="control-btn" onclick="toggleLanguage()" id="lang-btn">EN</button>
+        <a class="control-btn" style="text-decoration: none; border-color: #3b82f6;" href="/certificates/new">+ Novo</a>
+      </div>
+      <h1 data-lang-pt="🎓 Certificações" data-lang-en="🎓 Certifications">🎓 Certificações</h1>
+    </header>
+
+    <main>
+      <!-- BEGIN app/views/certificates/index.html.erb
+--><!-- Filtros de Ordenação -->
+<div class="filters">
+  <div class="filter-group">
+    <label data-lang-pt="Ordenar por:" data-lang-en="Sort by:">Ordenar por:</label>
+    <select id="orderBy">
+      <option value="issued_at" selected data-lang-pt="Data de Emissão" data-lang-en="Issue Date">Data de Emissão</option>
+      <option value="title" data-lang-pt="Título" data-lang-en="Title">Título</option>
+      <option value="issuer" data-lang-pt="Emissor" data-lang-en="Issuer">Emissor</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <label data-lang-pt="Ordem:" data-lang-en="Order:">Ordem:</label>
+    <select id="orderDir">
+      <option value="DESC" selected data-lang-pt="Decrescente" data-lang-en="Descending">Decrescente</option>
+      <option value="ASC" data-lang-pt="Crescente" data-lang-en="Ascending">Crescente</option>
+    </select>
+  </div>
+</div>
+
+<div class="gallery">
+    
+    <div class="card" onclick="openLightbox('', 'https://validate.cyberwarfare.live/CWL-12345-ABC')">
+      
+        <div style="height: 240px; background: #222; display: flex; align-items: center; justify-content: center; color: #666;">
+          Sem Imagem
+        </div>
+
+      <div class="card-title">
+        <strong>CRT-COI (Credential Offense Internals)</strong><br>
+        <span data-lang-pt="Emissor:" data-lang-en="Issuer:">Emissor:</span> CyberWarfare Labs<br>
+        <span style="color: var(--text-secondary); font-size: 0.9em;">15/04/2026</span>
+      </div>
+    <!-- INÍCIO DOS CONTROLES DE ADMINISTRAÇÃO -->
+      <div style="display: flex; justify-content: space-between; padding: 12px 15px; border-top: 1px solid var(--border-color); background: var(--bg-primary);" onclick="event.stopPropagation()">
+        <a style="color: #3b82f6; text-decoration: none; font-size: 0.9em; font-weight: 600;" href="/certificates/1/edit">✏️ Editar</a>
+        <a data-turbo-method="delete" data-turbo-confirm="Tem certeza que deseja apagar este certificado?" style="color: #ef4444; text-decoration: none; font-size: 0.9em; font-weight: 600;" href="/certificates/1">🗑️ Excluir</a>
+      </div>
+      <!-- FIM DOS CONTROLES -->
+    </div>
+    
+    <div class="card" onclick="openLightbox('', 'https://validate.cyberwarfare.live/CWL-67890-XYZ')">
+      
+        <div style="height: 240px; background: #222; display: flex; align-items: center; justify-content: center; color: #666;">
+          Sem Imagem
+        </div>
+
+      <div class="card-title">
+        <strong>CRTA (Certified Red Team Analyst)</strong><br>
+        <span data-lang-pt="Emissor:" data-lang-en="Issuer:">Emissor:</span> CyberWarfare Labs<br>
+        <span style="color: var(--text-secondary); font-size: 0.9em;">20/06/2026</span>
+      </div>
+    <!-- INÍCIO DOS CONTROLES DE ADMINISTRAÇÃO -->
+      <div style="display: flex; justify-content: space-between; padding: 12px 15px; border-top: 1px solid var(--border-color); background: var(--bg-primary);" onclick="event.stopPropagation()">
+        <a style="color: #3b82f6; text-decoration: none; font-size: 0.9em; font-weight: 600;" href="/certificates/2/edit">✏️ Editar</a>
+        <a data-turbo-method="delete" data-turbo-confirm="Tem certeza que deseja apagar este certificado?" style="color: #ef4444; text-decoration: none; font-size: 0.9em; font-weight: 600;" href="/certificates/2">🗑️ Excluir</a>
+      </div>
+      <!-- FIM DOS CONTROLES -->
+    </div>
+</div>
+
+<!-- Lightbox (Fica invisível até ser chamado pelo Javascript) -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <div id="lightbox-content" onclick="event.stopPropagation()" style="display: flex; flex-direction: column; align-items: center;">
+    <img id="lightbox-img" src="">
+    <br>
+    <a id="lightbox-link" class="verify" href="#" target="_blank" data-lang-pt="🔗 Verificar credencial" data-lang-en="🔗 Verify credential">🔗 Verificar credencial</a>
+  </div>
+</div>
+<!-- END app/views/certificates/index.html.erb -->
+    </main>
+
+    <script>
+      // Sistema de Temas
+      function toggleTheme() {
+          const body = document.body;
+          const btn = document.getElementById('theme-btn');
+          if (body.classList.contains('light-mode')) {
+              body.classList.remove('light-mode');
+              btn.textContent = '🌙';
+              localStorage.setItem('theme', 'dark');
+          } else {
+              body.classList.add('light-mode');
+              btn.textContent = '☀️';
+              localStorage.setItem('theme', 'light');
+          }
+      }
+
+      // Sistema de Tradução
+      let currentLang = 'pt';
+      function toggleLanguage() {
+          const btn = document.getElementById('lang-btn');
+          currentLang = currentLang === 'pt' ? 'en' : 'pt';
+          btn.textContent = currentLang === 'pt' ? 'EN' : 'PT';
+          localStorage.setItem('language', currentLang);
+          updateLanguage();
+      }
+
+      function updateLanguage() {
+          const elements = document.querySelectorAll('[data-lang-pt][data-lang-en]');
+          elements.forEach(el => {
+              const text = currentLang === 'pt' ? el.getAttribute('data-lang-pt') : el.getAttribute('data-lang-en');
+              if (el.tagName === 'OPTION' || el.tagName === 'LABEL' || el.tagName === 'SPAN' || el.tagName === 'H1' || el.tagName === 'A') {
+                  el.textContent = text;
+              } else {
+                  el.innerHTML = text;
+              }
+          });
+      }
+
+      window.addEventListener('DOMContentLoaded', () => {
+          const savedTheme = localStorage.getItem('theme');
+          if (savedTheme === 'light') {
+              document.body.classList.add('light-mode');
+              document.getElementById('theme-btn').textContent = '☀️';
+          }
+          const savedLang = localStorage.getItem('language');
+          if (savedLang === 'en') {
+              currentLang = 'en';
+              document.getElementById('lang-btn').textContent = 'PT';
+              updateLanguage();
+          }
+      });
+
+      // Sistema de Lightbox
+      function openLightbox(imgSrc, verifyUrl) {
+          const lb = document.getElementById('lightbox');
+          document.getElementById('lightbox-img').src = imgSrc;
+          document.getElementById('lightbox-link').href = verifyUrl;
+          lb.style.display = 'flex';
+      }
+
+      function closeLightbox() {
+          document.getElementById('lightbox').style.display = 'none';
+      }
+    </script>
+  </body>
 </html>
+<!-- END app/views/layouts/application.html.erb -->
