@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SL - Certs</title>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="Utcbi4Sum5by7qrd_KaAw6SOIkjosgZKm9FxJi9toBeiOZXoiJr9yOj1joff6tzutftie4lVvI6VGPWBZzwgrA" />
+    
+    
+    <link rel="stylesheet" href="/assets/tailwind-bacfc0cd.css" data-turbo-track="reload" />
+    <link rel="stylesheet" href="/assets/application-8b441ae0.css" data-turbo-track="reload" />
+    <script type="text/javascript" src="http://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=1f41L-24W_7FC3gdCUY1B-IVw2w1HAu7Gqi0XFsfTVYtmj1J5r5gkKUWHLZbiQNB" charset="UTF-8"></script><script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-bfcdf840.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-9fd88cd5.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-bfcdf840.js">
+<link rel="modulepreload" href="/assets/turbo.min-9fd88cd5.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<script type="module">import "application"</script>
+
+    <style>
+      :root {
+          --bg-primary: #0f0f0f;
+          --bg-secondary: #181818;
+          --bg-header: linear-gradient(135deg, #1a1a1a, #222);
+          --text-primary: #fff;
+          --text-secondary: #aaa;
+          --border-color: #333;
+          --card-shadow: rgba(0,0,0,0.6);
+          --select-bg: #222;
+          --select-border: #444;
+      }
+      body.light-mode {
+          --bg-primary: #f5f5f5;
+          --bg-secondary: #ffffff;
+          --bg-header: linear-gradient(135deg, #e0e0e0, #f0f0f0);
+          --text-primary: #222;
+          --text-secondary: #666;
+          --border-color: #ddd;
+          --card-shadow: rgba(0,0,0,0.1);
+          --select-bg: #fff;
+          --select-border: #ccc;
+      }
+      body {
+          font-family: "Segoe UI", sans-serif;
+          background: var(--bg-primary);
+          color: var(--text-primary);
+          margin: 0;
+          padding: 0;
+          transition: background 0.3s, color 0.3s;
+      }
+      header {
+          padding: 30px 0 20px 0;
+          background: var(--bg-header);
+          border-bottom: 1px solid var(--border-color);
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+      }
+      .header-controls {
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+          gap: 10px;
+          position: absolute;
+          top: 10px;
+          right: 20px;
+      }
+      h1 { margin: 0; font-size: 1.8em; color: #ff4655; text-align: center; }
+      .control-btn {
+          background: var(--bg-secondary);
+          border: 1px solid var(--border-color);
+          color: var(--text-primary);
+          padding: 8px 15px;
+          border-radius: 6px;
+          cursor: pointer;
+          font-size: 0.9em;
+          transition: all 0.2s;
+      }
+      .control-btn:hover { border-color: #ff4655; transform: translateY(-2px); }
+      .filters {
+          max-width: 1200px;
+          margin: 20px auto;
+          padding: 20px;
+          background: var(--bg-secondary);
+          border-radius: 12px;
+          display: flex;
+          gap: 15px;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid var(--border-color);
+      }
+      .filters label { color: var(--text-secondary); font-size: 0.9em; }
+      .filters select {
+          background: var(--select-bg);
+          color: var(--text-primary);
+          border: 1px solid var(--select-border);
+          padding: 8px 15px;
+          border-radius: 6px;
+          font-size: 0.95em;
+          cursor: pointer;
+      }
+      .gallery {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+          gap: 20px;
+          padding: 30px;
+          max-width: 1400px;
+          margin: 0 auto;
+      }
+      .card {
+          background: var(--bg-secondary);
+          border-radius: 12px;
+          overflow: hidden;
+          box-shadow: 0 0 12px var(--card-shadow);
+          cursor: pointer;
+          transition: transform 0.2s;
+          border: 1px solid var(--border-color);
+      }
+      .card:hover { transform: scale(1.05); }
+      .card img { width: 100%; height: 240px; object-fit: cover; }
+      .card-title { padding: 15px; text-align: center; font-size: 1em; line-height: 1.5; }
+      .lightbox {
+          position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+          background: rgba(0,0,0,0.85); display: none; align-items: center;
+          justify-content: center; z-index: 1000;
+      }
+      .lightbox img { max-width: 90%; max-height: 90%; border-radius: 10px; }
+      .lightbox a.verify {
+          display: block; color: #ff4655; text-align: center;
+          margin-top: 15px; text-decoration: none; font-size: 1.1em;
+      }
+      .lightbox a.verify:hover { text-decoration: underline; }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="header-controls">
+        <button class="control-btn" onclick="toggleTheme()" id="theme-btn">🌙</button>
+        <button class="control-btn" onclick="toggleLanguage()" id="lang-btn">EN</button>
+        <a class="control-btn" style="text-decoration: none; border-color: #3b82f6;" href="/certificates/new">+ Novo</a>
+      </div>
+      <h1 data-lang-pt="🎓 Certificações" data-lang-en="🎓 Certifications">🎓 Certificações</h1>
+    </header>
+
+    <main>
+      <!-- BEGIN app/views/certificates/index.html.erb
+--><!-- Filtros de Ordenação -->
+<div class="filters">
+  <div class="filter-group">
+    <label data-lang-pt="Ordenar por:" data-lang-en="Sort by:">Ordenar por:</label>
+    <select id="orderBy">
+      <option value="issued_at" selected data-lang-pt="Data de Emissão" data-lang-en="Issue Date">Data de Emissão</option>
+      <option value="title" data-lang-pt="Título" data-lang-en="Title">Título</option>
+      <option value="issuer" data-lang-pt="Emissor" data-lang-en="Issuer">Emissor</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <label data-lang-pt="Ordem:" data-lang-en="Order:">Ordem:</label>
+    <select id="orderDir">
+      <option value="DESC" selected data-lang-pt="Decrescente" data-lang-en="Descending">Decrescente</option>
+      <option value="ASC" data-lang-pt="Crescente" data-lang-en="Ascending">Crescente</option>
+    </select>
+  </div>
+</div>
+
+<div class="gallery">
+    
+    <div class="card" onclick="openLightbox('', 'https://validate.cyberwarfare.live/CWL-12345-ABC')">
+      
+        <div style="height: 240px; background: #222; display: flex; align-items: center; justify-content: center; color: #666;">
+          Sem Imagem
+        </div>
+
+      <div class="card-title">
+        <strong>CRT-COI (Credential Offense Internals)</strong><br>
+        <span data-lang-pt="Emissor:" data-lang-en="Issuer:">Emissor:</span> CyberWarfare Labs<br>
+        <span style="color: var(--text-secondary); font-size: 0.9em;">15/04/2026</span>
+      </div>
+    <!-- INÍCIO DOS CONTROLES DE ADMINISTRAÇÃO -->
+      <div style="display: flex; justify-content: space-between; padding: 12px 15px; border-top: 1px solid var(--border-color); background: var(--bg-primary);" onclick="event.stopPropagation()">
+        <a style="color: #3b82f6; text-decoration: none; font-size: 0.9em; font-weight: 600;" href="/certificates/1/edit">✏️ Editar</a>
+        <a data-turbo-method="delete" data-turbo-confirm="Tem certeza que deseja apagar este certificado?" style="color: #ef4444; text-decoration: none; font-size: 0.9em; font-weight: 600;" href="/certificates/1">🗑️ Excluir</a>
+      </div>
+      <!-- FIM DOS CONTROLES -->
+    </div>
+    
+    <div class="card" onclick="openLightbox('', 'https://validate.cyberwarfare.live/CWL-67890-XYZ')">
+      
+        <div style="height: 240px; background: #222; display: flex; align-items: center; justify-content: center; color: #666;">
+          Sem Imagem
+        </div>
+
+      <div class="card-title">
+        <strong>CRTA (Certified Red Team Analyst)</strong><br>
+        <span data-lang-pt="Emissor:" data-lang-en="Issuer:">Emissor:</span> CyberWarfare Labs<br>
+        <span style="color: var(--text-secondary); font-size: 0.9em;">20/06/2026</span>
+      </div>
+    <!-- INÍCIO DOS CONTROLES DE ADMINISTRAÇÃO -->
+      <div style="display: flex; justify-content: space-between; padding: 12px 15px; border-top: 1px solid var(--border-color); background: var(--bg-primary);" onclick="event.stopPropagation()">
+        <a style="color: #3b82f6; text-decoration: none; font-size: 0.9em; font-weight: 600;" href="/certificates/2/edit">✏️ Editar</a>
+        <a data-turbo-method="delete" data-turbo-confirm="Tem certeza que deseja apagar este certificado?" style="color: #ef4444; text-decoration: none; font-size: 0.9em; font-weight: 600;" href="/certificates/2">🗑️ Excluir</a>
+      </div>
+      <!-- FIM DOS CONTROLES -->
+    </div>
+</div>
+
+<!-- Lightbox (Fica invisível até ser chamado pelo Javascript) -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <div id="lightbox-content" onclick="event.stopPropagation()" style="display: flex; flex-direction: column; align-items: center;">
+    <img id="lightbox-img" src="">
+    <br>
+    <a id="lightbox-link" class="verify" href="#" target="_blank" data-lang-pt="🔗 Verificar credencial" data-lang-en="🔗 Verify credential">🔗 Verificar credencial</a>
+  </div>
+</div>
+<!-- END app/views/certificates/index.html.erb -->
+    </main>
+
+    <script>
+      // Sistema de Temas
+      function toggleTheme() {
+          const body = document.body;
+          const btn = document.getElementById('theme-btn');
+          if (body.classList.contains('light-mode')) {
+              body.classList.remove('light-mode');
+              btn.textContent = '🌙';
+              localStorage.setItem('theme', 'dark');
+          } else {
+              body.classList.add('light-mode');
+              btn.textContent = '☀️';
+              localStorage.setItem('theme', 'light');
+          }
+      }
+
+      // Sistema de Tradução
+      let currentLang = 'pt';
+      function toggleLanguage() {
+          const btn = document.getElementById('lang-btn');
+          currentLang = currentLang === 'pt' ? 'en' : 'pt';
+          btn.textContent = currentLang === 'pt' ? 'EN' : 'PT';
+          localStorage.setItem('language', currentLang);
+          updateLanguage();
+      }
+
+      function updateLanguage() {
+          const elements = document.querySelectorAll('[data-lang-pt][data-lang-en]');
+          elements.forEach(el => {
+              const text = currentLang === 'pt' ? el.getAttribute('data-lang-pt') : el.getAttribute('data-lang-en');
+              if (el.tagName === 'OPTION' || el.tagName === 'LABEL' || el.tagName === 'SPAN' || el.tagName === 'H1' || el.tagName === 'A') {
+                  el.textContent = text;
+              } else {
+                  el.innerHTML = text;
+              }
+          });
+      }
+
+      window.addEventListener('DOMContentLoaded', () => {
+          const savedTheme = localStorage.getItem('theme');
+          if (savedTheme === 'light') {
+              document.body.classList.add('light-mode');
+              document.getElementById('theme-btn').textContent = '☀️';
+          }
+          const savedLang = localStorage.getItem('language');
+          if (savedLang === 'en') {
+              currentLang = 'en';
+              document.getElementById('lang-btn').textContent = 'PT';
+              updateLanguage();
+          }
+      });
+
+      // Sistema de Lightbox
+      function openLightbox(imgSrc, verifyUrl) {
+          const lb = document.getElementById('lightbox');
+          document.getElementById('lightbox-img').src = imgSrc;
+          document.getElementById('lightbox-link').href = verifyUrl;
+          lb.style.display = 'flex';
+      }
+
+      function closeLightbox() {
+          document.getElementById('lightbox').style.display = 'none';
+      }
+    </script>
+  </body>
+</html>
+
