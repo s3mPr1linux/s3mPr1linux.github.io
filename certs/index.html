@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Certificações | Portfólio</title>
   
-  <!-- Importação do Bulma CSS via CDN -->
+  <!-- Importação do Bulma CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
   <style>
@@ -32,33 +32,34 @@
         transition: background 0.3s, color 0.3s;
     }
     
-    /* Forçando o Bulma a respeitar o seu Tema Escuro/Claro */
+    /* Forçando as cores e bordas no modo escuro/claro */
     .box, .card {
-        background-color: var(--bg-secondary);
-        border: 1px solid var(--border-color);
-        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-    .card-content .title, .card-content .subtitle, .content {
-        color: var(--text-primary) !important;
+        background-color: var(--bg-secondary) !important;
+        border: 1px solid var(--border-color) !important;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
+        border-radius: 8px;
+        overflow: hidden;
     }
     .card-footer {
-        border-top: 1px solid var(--border-color);
+        border-top: 1px solid var(--border-color) !important;
     }
     .card-footer-item {
-        border-right: 1px solid var(--border-color);
-        font-size: 0.85em;
-        font-weight: 600;
+        border-right: 1px solid var(--border-color) !important;
+        font-size: 0.9em;
+        font-weight: bold;
     }
-    .title.is-custom-header {
-        color: #ff4655 !important;
+    .card-footer-item:last-child {
+        border-right: none !important;
     }
-
-    /* Correção do conflito de imagem do Bulma */
+    
+    /* Imagem do cartão travada para não sobrepor o texto */
     .custom-card-image {
         width: 100%;
-        height: 200px;
+        height: 220px;
         background-color: #222;
-        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .custom-card-image img {
         width: 100%;
@@ -88,7 +89,7 @@
       </div>
     </div>
     <div class="hero-body has-text-centered py-4">
-      <h1 class="title is-3 is-custom-header" data-lang-pt="🎓 Certificações" data-lang-en="🎓 Certifications">🎓 Certificações</h1>
+      <h1 class="is-size-3 has-text-weight-bold" style="color: #ff4655;" data-lang-pt="🎓 Certificações" data-lang-en="🎓 Certifications">🎓 Certificações</h1>
     </div>
   </section>
 
@@ -96,7 +97,7 @@
   <section class="section">
     <div class="container is-max-widescreen">
       
-      <!-- GRID DE CARTÕES DO BULMA -->
+      <!-- GRID DE CARTÕES -->
       <div class="columns is-multiline" id="certificates">
 
         <!-- ========================================== -->
@@ -105,36 +106,40 @@
         <div class="column is-12-mobile is-6-tablet is-4-desktop">
           <div class="card is-flex is-flex-direction-column" style="height: 100%; cursor: pointer;" onclick="openLightbox('uploads/exemplo_crt_coi.png', 'https://validate.cyberwarfare.live/CWL-12345-ABC')">
             
-            <!-- Imagem Corrigida -->
+            <!-- Imagem -->
             <div class="custom-card-image">
               <img src="uploads/exemplo_crt_coi.png" alt="CRT-COI" onerror="this.style.display='none'">
             </div>
 
-            <!-- Textos -->
-            <div class="card-content is-flex-grow-1">
-              <p class="title is-5 mb-2">CRT-COI (Credential Offense Internals)</p>
-              <p class="subtitle is-6 mb-4">
-                <strong data-lang-pt="Emissor:" data-lang-en="Issuer:">Emissor:</strong> CyberWarfare Labs
+            <!-- Textos (Usando is-flex-grow-1 para empurrar o rodapé pra baixo) -->
+            <div class="card-content is-flex is-flex-direction-column is-flex-grow-1" style="padding: 1.5rem;">
+              <h2 class="is-size-5 has-text-weight-bold mb-2" style="color: var(--text-primary);">CRT-COI (Credential Offense Internals)</h2>
+              
+              <p class="is-size-7 mb-1" style="color: var(--text-secondary);">
+                <strong style="color: var(--text-primary);" data-lang-pt="Emissor:" data-lang-en="Issuer:">Emissor:</strong> CyberWarfare Labs
               </p>
-              <div class="content is-small">
-                <p>
-                  <strong>Data:</strong> 
-                  <span style="color: var(--text-secondary);">15/04/2026</span><br>
-                  <span class="has-text-grey">ID: CWL-12345</span>
-                </p>
-                <p>Certificação focada em exploração de credenciais, movimentação lateral e ataques em ambientes Active Directory.</p>
-              </div>
+              
+              <p class="is-size-7 mb-4" style="color: var(--text-secondary);">
+                <strong style="color: var(--text-primary);">Data:</strong> 15/04/2026
+              </p>
+              
+              <!-- A descrição flexível para manter o tamanho padrão -->
+              <p class="is-size-7 mb-5 is-flex-grow-1" style="color: var(--text-primary);">
+                Certificação focada em exploração de credenciais, movimentação lateral e ataques em ambientes Active Directory.
+              </p>
+              
+              <p class="is-size-7 mb-0" style="color: var(--text-secondary); font-family: monospace;">ID: CWL-12345</p>
             </div>
 
-            <!-- Rodapé com Botões Restaurados -->
+            <!-- Rodapé com Botões Coloridos -->
             <footer class="card-footer" onclick="event.stopPropagation()">
-              <a href="https://validate.cyberwarfare.live/CWL-12345-ABC" target="_blank" class="card-footer-item has-text-primary">
+              <a href="https://validate.cyberwarfare.live/CWL-12345-ABC" target="_blank" class="card-footer-item" style="color: #3e8ed0; text-decoration: none;">
                 🔗 Validar
               </a>
-              <a href="#" onclick="alert('Modo Estático: Atualize editando o arquivo HTML no GitHub.')" class="card-footer-item has-text-info">
+              <a href="#" onclick="alert('Estático: Edite o arquivo index.html no seu GitHub para alterar os dados.')" class="card-footer-item" style="color: #48c774; text-decoration: none;">
                 ✏️ Editar
               </a>
-              <a href="#" onclick="alert('Modo Estático: Remova o bloco de código HTML no GitHub.')" class="card-footer-item has-text-danger">
+              <a href="#" onclick="alert('Estático: Delete o bloco deste cartão no seu arquivo HTML.')" class="card-footer-item" style="color: #f14668; text-decoration: none;">
                 🗑️ Excluir
               </a>
             </footer>
@@ -151,29 +156,32 @@
               <img src="uploads/exemplo_crta.png" alt="CRTA" onerror="this.style.display='none'">
             </div>
 
-            <div class="card-content is-flex-grow-1">
-              <p class="title is-5 mb-2">CRTA (Certified Red Team Analyst)</p>
-              <p class="subtitle is-6 mb-4">
-                <strong data-lang-pt="Emissor:" data-lang-en="Issuer:">Emissor:</strong> CyberWarfare Labs
+            <div class="card-content is-flex is-flex-direction-column is-flex-grow-1" style="padding: 1.5rem;">
+              <h2 class="is-size-5 has-text-weight-bold mb-2" style="color: var(--text-primary);">CRTA (Certified Red Team Analyst)</h2>
+              
+              <p class="is-size-7 mb-1" style="color: var(--text-secondary);">
+                <strong style="color: var(--text-primary);" data-lang-pt="Emissor:" data-lang-en="Issuer:">Emissor:</strong> CyberWarfare Labs
               </p>
-              <div class="content is-small">
-                <p>
-                  <strong>Data:</strong> 
-                  <span style="color: var(--text-secondary);">20/06/2026</span><br>
-                  <span class="has-text-grey">ID: CWL-67890</span>
-                </p>
-                <p>Análise avançada de Red Team focada em evasão de defesas e operações táticas.</p>
-              </div>
+              
+              <p class="is-size-7 mb-4" style="color: var(--text-secondary);">
+                <strong style="color: var(--text-primary);">Data:</strong> 20/06/2026
+              </p>
+              
+              <p class="is-size-7 mb-5 is-flex-grow-1" style="color: var(--text-primary);">
+                Análise avançada de Red Team focada em evasão de defesas e operações táticas.
+              </p>
+              
+              <p class="is-size-7 mb-0" style="color: var(--text-secondary); font-family: monospace;">ID: CWL-67890</p>
             </div>
 
             <footer class="card-footer" onclick="event.stopPropagation()">
-              <a href="https://validate.cyberwarfare.live/CWL-67890-XYZ" target="_blank" class="card-footer-item has-text-primary">
+              <a href="https://validate.cyberwarfare.live/CWL-67890-XYZ" target="_blank" class="card-footer-item" style="color: #3e8ed0; text-decoration: none;">
                 🔗 Validar
               </a>
-              <a href="#" onclick="alert('Modo Estático: Atualize editando o arquivo HTML no GitHub.')" class="card-footer-item has-text-info">
+              <a href="#" onclick="alert('Estático: Edite o arquivo index.html no seu GitHub para alterar os dados.')" class="card-footer-item" style="color: #48c774; text-decoration: none;">
                 ✏️ Editar
               </a>
-              <a href="#" onclick="alert('Modo Estático: Remova o bloco de código HTML no GitHub.')" class="card-footer-item has-text-danger">
+              <a href="#" onclick="alert('Estático: Delete o bloco deste cartão no seu arquivo HTML.')" class="card-footer-item" style="color: #f14668; text-decoration: none;">
                 🗑️ Excluir
               </a>
             </footer>
@@ -189,8 +197,8 @@
     <div onclick="event.stopPropagation()" style="display: flex; flex-direction: column; align-items: center;">
       <img id="lightbox-img" src="">
       <br>
-      <a id="lightbox-link" href="#" target="_blank" class="button is-info mt-3" data-lang-pt="🔗 Verificar credencial" data-lang-en="🔗 Verify credential">
-        🔗 Verificar credencial
+      <a id="lightbox-link" href="#" target="_blank" class="button is-info mt-3" style="font-weight: bold;" data-lang-pt="🔗 Verificar credencial Oficial" data-lang-en="🔗 Verify Official credential">
+        🔗 Verificar credencial Oficial
       </a>
     </div>
   </div>
@@ -223,7 +231,7 @@
         const elements = document.querySelectorAll('[data-lang-pt][data-lang-en]');
         elements.forEach(el => {
             const text = currentLang === 'pt' ? el.getAttribute('data-lang-pt') : el.getAttribute('data-lang-en');
-            if (el.tagName === 'OPTION' || el.tagName === 'LABEL' || el.tagName === 'SPAN' || el.tagName === 'H1' || el.tagName === 'A') {
+            if (el.tagName === 'OPTION' || el.tagName === 'LABEL' || el.tagName === 'SPAN' || el.tagName === 'H1' || el.tagName === 'A' || el.tagName === 'STRONG') {
                 el.textContent = text;
             } else {
                 el.innerHTML = text;
