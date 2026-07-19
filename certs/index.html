@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SL - CERTS</title>
+  <title>Certificações | Portfólio</title>
   
   <!-- Importação do Bulma CSS via CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
@@ -46,9 +46,24 @@
     }
     .card-footer-item {
         border-right: 1px solid var(--border-color);
+        font-size: 0.85em;
+        font-weight: 600;
     }
     .title.is-custom-header {
         color: #ff4655 !important;
+    }
+
+    /* Correção do conflito de imagem do Bulma */
+    .custom-card-image {
+        width: 100%;
+        height: 200px;
+        background-color: #222;
+        overflow: hidden;
+    }
+    .custom-card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     /* Lightbox */
@@ -69,7 +84,6 @@
       <div class="is-flex is-justify-content-flex-end" style="gap: 10px;">
         <button class="button is-small is-dark is-outlined" onclick="toggleTheme()" id="theme-btn">🌙</button>
         <button class="button is-small is-dark is-outlined" onclick="toggleLanguage()" id="lang-btn">EN</button>
-        <!-- Botão Voltar para a página inicial estática -->
         <a href="../" class="button is-small is-info is-outlined">Voltar</a>
       </div>
     </div>
@@ -86,17 +100,14 @@
       <div class="columns is-multiline" id="certificates">
 
         <!-- ========================================== -->
-        <!-- CARTÃO 1 -->
+        <!-- CARTÃO 1: CRT-COI -->
         <!-- ========================================== -->
         <div class="column is-12-mobile is-6-tablet is-4-desktop">
           <div class="card is-flex is-flex-direction-column" style="height: 100%; cursor: pointer;" onclick="openLightbox('uploads/exemplo_crt_coi.png', 'https://validate.cyberwarfare.live/CWL-12345-ABC')">
             
-            <!-- Imagem -->
-            <div class="card-image">
-              <figure class="image is-4by3" style="background: #222; overflow: hidden;">
-                <!-- Troque o src abaixo para a imagem do seu certificado -->
-                <img src="uploads/exemplo_crt_coi.png" alt="CRT-COI" style="object-fit: cover; width: 100%; height: 100%;">
-              </figure>
+            <!-- Imagem Corrigida -->
+            <div class="custom-card-image">
+              <img src="uploads/exemplo_crt_coi.png" alt="CRT-COI" onerror="this.style.display='none'">
             </div>
 
             <!-- Textos -->
@@ -108,32 +119,36 @@
               <div class="content is-small">
                 <p>
                   <strong>Data:</strong> 
-                  <span style="color: var(--text-secondary);">15/04/2026</span>
+                  <span style="color: var(--text-secondary);">15/04/2026</span><br>
+                  <span class="has-text-grey">ID: CWL-12345</span>
                 </p>
                 <p>Certificação focada em exploração de credenciais, movimentação lateral e ataques em ambientes Active Directory.</p>
               </div>
             </div>
 
-            <!-- Rodapé para link de validação -->
+            <!-- Rodapé com Botões Restaurados -->
             <footer class="card-footer" onclick="event.stopPropagation()">
-              <div class="card-footer-item has-text-grey is-size-7">ID: CWL-12345</div>
-              <a href="https://validate.cyberwarfare.live/CWL-12345-ABC" target="_blank" class="card-footer-item has-text-info has-text-weight-bold">
-                Validar Oficial
+              <a href="https://validate.cyberwarfare.live/CWL-12345-ABC" target="_blank" class="card-footer-item has-text-primary">
+                🔗 Validar
+              </a>
+              <a href="#" onclick="alert('Modo Estático: Atualize editando o arquivo HTML no GitHub.')" class="card-footer-item has-text-info">
+                ✏️ Editar
+              </a>
+              <a href="#" onclick="alert('Modo Estático: Remova o bloco de código HTML no GitHub.')" class="card-footer-item has-text-danger">
+                🗑️ Excluir
               </a>
             </footer>
           </div>
         </div>
 
         <!-- ========================================== -->
-        <!-- CARTÃO 2 -->
+        <!-- CARTÃO 2: CRTA -->
         <!-- ========================================== -->
         <div class="column is-12-mobile is-6-tablet is-4-desktop">
           <div class="card is-flex is-flex-direction-column" style="height: 100%; cursor: pointer;" onclick="openLightbox('uploads/exemplo_crta.png', 'https://validate.cyberwarfare.live/CWL-67890-XYZ')">
             
-            <div class="card-image">
-              <figure class="image is-4by3" style="background: #222; overflow: hidden;">
-                <img src="uploads/exemplo_crta.png" alt="CRTA" style="object-fit: cover; width: 100%; height: 100%;">
-              </figure>
+            <div class="custom-card-image">
+              <img src="uploads/exemplo_crta.png" alt="CRTA" onerror="this.style.display='none'">
             </div>
 
             <div class="card-content is-flex-grow-1">
@@ -144,16 +159,22 @@
               <div class="content is-small">
                 <p>
                   <strong>Data:</strong> 
-                  <span style="color: var(--text-secondary);">20/06/2026</span>
+                  <span style="color: var(--text-secondary);">20/06/2026</span><br>
+                  <span class="has-text-grey">ID: CWL-67890</span>
                 </p>
                 <p>Análise avançada de Red Team focada em evasão de defesas e operações táticas.</p>
               </div>
             </div>
 
             <footer class="card-footer" onclick="event.stopPropagation()">
-              <div class="card-footer-item has-text-grey is-size-7">ID: CWL-67890</div>
-              <a href="https://validate.cyberwarfare.live/CWL-67890-XYZ" target="_blank" class="card-footer-item has-text-info has-text-weight-bold">
-                Validar Oficial
+              <a href="https://validate.cyberwarfare.live/CWL-67890-XYZ" target="_blank" class="card-footer-item has-text-primary">
+                🔗 Validar
+              </a>
+              <a href="#" onclick="alert('Modo Estático: Atualize editando o arquivo HTML no GitHub.')" class="card-footer-item has-text-info">
+                ✏️ Editar
+              </a>
+              <a href="#" onclick="alert('Modo Estático: Remova o bloco de código HTML no GitHub.')" class="card-footer-item has-text-danger">
+                🗑️ Excluir
               </a>
             </footer>
           </div>
@@ -175,7 +196,6 @@
   </div>
 
   <script>
-    // Sistema de Temas e Lightbox
     function toggleTheme() {
         const body = document.body;
         const btn = document.getElementById('theme-btn');
