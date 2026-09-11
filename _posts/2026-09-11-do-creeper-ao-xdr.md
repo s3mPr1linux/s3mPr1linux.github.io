@@ -95,7 +95,7 @@ Isso não é ironia histórica. É a regra — e é por isso que a narrativa de 
 No lado comercial, a cronologia real é mais espalhada do que costuma se dizer:
 
 | Produto | Ano | Origem |
-|---|---|---|
+| --- | --- | --- |
 | NOD (antecessor do NOD32) | 1987 | Tchecoslováquia |
 | McAfee Associates / VirusScan | 1987 | EUA |
 | **Norton AntiVirus** | **1991** | EUA — a Symantec só comprou a Peter Norton Computing em agosto de 1990 |
@@ -158,7 +158,7 @@ Aqui está a virada que poucos artigos nomeiam de forma direta: **o EDR não pro
 É a primeira geração de produto de segurança cuja premissa de projeto é que a execução vai acontecer. Não é um antivírus melhor — é uma categoria com outro objetivo.
 
 | | AV / EPP | EDR |
-|---|---|---|
+| --- | --- | --- |
 | **Pergunta** | "Bloqueio ou permito?" | "O que aconteceu, de onde veio, como contenho?" |
 | **Foco** | Pré-execução | Pós-comprometimento |
 | **Dados** | Eventos de detecção pontuais | Telemetria contínua: árvore de processos, cmdline, registro, rede |
@@ -216,7 +216,7 @@ A troca que a indústria fez foi clara: abandonou "impedir" e adotou "encurtar a
 Só que ele parou:
 
 | Ano | Dwell time mediano global |
-|---|---|
+| --- | --- |
 | 2011 | 416 dias |
 | 2023 | 10 dias |
 | 2024 | 11 dias |
@@ -264,7 +264,7 @@ Em paralelo, o outro lado da mesma fronteira: agentes de IA com credencial váli
 ## 9. Linha do tempo consolidada
 
 | Ano | Marco ofensivo | Marco defensivo |
-|---|---|---|
+| --- | --- | --- |
 | 1971 | Creeper — primeiro worm | — |
 | 1972 | — | Reaper — primeira contramedida autônoma |
 | 1986 | Brain — primeiro vírus de PC **e primeiro stealth** | — |
@@ -325,4 +325,4 @@ E uma última, que é a que me interessa mais: **quando a lógica do malware mor
 
 ---
 
-*Este é o primeiro de uma série de dez artigos sobre detecção e resposta. Nos próximos, saio da história e entro no código: estou construindo um EDR do zero, e vou publicar o que ele detecta — e principalmente o que ele não detecta.*
+*Este é o primeiro de uma série de dez artigos sobre detecção e resposta que estou escrevendo. Nos próximos, saio da história e entro no código: estou construindo um EDR genérico do zero, com o objetivo didático de entender como a solução se comporta debaixo dos panos, e melhorar o entendimento.*
