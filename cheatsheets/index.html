@@ -1,0 +1,49 @@
+---
+layout: default
+title: Cheatsheets
+permalink: /cheatsheets/
+---
+<link rel="stylesheet" href="{{ '/assets/css/cheatsheet.css' | prepend: site.baseurl | replace: '//', '/' }}">
+<h1>Cheatsheets</h1>
+<p class="view">{{ site.cheatsheets | size }} documento(s). Filtre por título ou tag.</p>
+
+<div class="cs-filters">
+  <input type="search" id="cs-search" class="cs-search" placeholder="Filtrar por título, resumo ou tag…" autocomplete="off">
+  {% assign todas_tags = site.cheatsheets | map: 'tags' | join: ',' | split: ',' | uniq | sort %}
+  <ul class="cs-tagcloud" id="cs-tagcloud">
+    <li><button type="button" class="cs-tagbtn is-active" data-tag="">todas</button></li>
+    {% for tag in todas_tags %}{% assign t = tag | strip %}{% if t != "" %}
+      <li><button type="button" class="cs-tagbtn" data-tag="{{ t | slugify }}">{{ t }}</button></li>
+    {% endif %}{% endfor %}
+  </ul>
+</div>
+
+{% assign grupos = site.cheatsheets | group_by: 'category' | sort: 'name' %}
+<div id="cs-results">
+  {% for grupo in grupos %}
+    <section class="cs-group" data-group>
+      <h2 class="cs-group__title">{% if grupo.name == "" %}Sem categoria{% else %}{{ grupo.name }}{% endif %}</h2>
+      <ul class="cs-list">
+        {% assign itens = grupo.items | sort: 'title' %}
+        {% for cs in itens %}
+          {%- capture tagslugs -%}{%- for tag in cs.tags -%}{{ tag | slugify }}{%- unless forloop.last -%},{%- endunless -%}{%- endfor -%}{%- endcapture -%}
+          {%- assign tagtexto = cs.tags | join: ' ' -%}
+          <li class="cs-card" data-tags="{{ tagslugs }}" data-text="{{ cs.title | append: ' ' | append: cs.summary | append: ' ' | append: tagtexto | strip_html | downcase | escape }}">
+            <a class="cs-card__link" href="{{ cs.url | prepend: site.baseurl | replace: '//', '/' }}">
+              <span class="cs-card__title">{{ cs.title }}</span>
+              {% if cs.summary %}<span class="cs-card__summary">{{ cs.summary }}</span>{% endif %}
+            </a>
+            <div class="cs-card__meta">
+              {% if cs.updated %}<span>{{ cs.updated | date: "%d/%m/%Y" }}</span>{% endif %}
+              {% if cs.difficulty %}<span>{{ cs.difficulty }}</span>{% endif %}
+            </div>
+            {% if cs.tags and cs.tags.size > 0 %}<ul class="cs-tags--sm">{% for tag in cs.tags %}<li>{{ tag }}</li>{% endfor %}</ul>{% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endfor %}
+</div>
+<p class="cs-empty" id="cs-empty" hidden>Nenhuma cheatsheet corresponde ao filtro.</p>
+
+<script src="{{ '/assets/js/cheatsheet-index.js' | prepend: site.baseurl | replace: '//', '/' }}" defer></script>

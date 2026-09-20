@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<link rel="stylesheet" href="{{ '/assets/css/cheatsheet.css' | prepend: site.baseurl | replace: '//', '/' }}">
+{% if page.updated %}<small>Atualizado {{ page.updated | date: "%-d %B %Y" }}</small>{% endif %}
+<h1>{{ page.title }}</h1>
+{% if page.summary %}<p class="view">{{ page.summary }}</p>{% endif %}
+
+{% if page.toc %}{% include cheatsheet-toc.html %}{% endif %}
+
+<div id="cs-content">
+{{ content }}
+</div>
+
+{% if page.tags %}
+  <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
+{% endif %}
+
+<script src="{{ '/assets/js/cheatsheet.js' | prepend: site.baseurl | replace: '//', '/' }}" defer></script>

@@ -1,0 +1,73 @@
+/* Só o específico de cheatsheet. Header, footer e fontes vêm do tema do
+   blog; blocos de código, tabelas e listas ganham estilo próprio escopado
+   em #cs-content porque o tema os deixa ilegíveis. */
+
+/* ── conteúdo: código legível (fundo escuro, texto claro) ── */
+#cs-content pre,
+#cs-content pre.highlight,
+#cs-content .highlight,
+#cs-content .highlight pre {
+  background: #0d1117 !important; color: #e6edf3 !important;
+  border: 1px solid rgba(127,127,127,.35); border-radius: 6px;
+  padding: 12px 14px; overflow-x: auto; font-size: 13px; line-height: 1.5;
+}
+#cs-content pre code, #cs-content .highlight code {
+  background: none !important; color: inherit !important; padding: 0; font-size: inherit;
+}
+#cs-content code { background: rgba(127,127,127,.2); padding: 2px 5px; border-radius: 4px; font-size: .9em; }
+#cs-content table { border-collapse: collapse; }
+#cs-content th, #cs-content td { border: 1px solid rgba(127,127,127,.4); padding: 6px 10px; text-align: left; }
+
+/* ── tira o mascote do tema das listas do conteúdo, marcador discreto ── */
+#cs-content ul { list-style: none; padding-left: 1.4em; }
+#cs-content ul > li { background-image: none !important; position: relative; }
+#cs-content ul > li::marker { content: none; }
+#cs-content ul > li::before { content: "▸" !important; background: none !important; position: absolute; left: -1.2em; opacity: .55; }
+#cs-content ol { padding-left: 1.6em; }
+#cs-content ol > li { background-image: none !important; }
+#cs-content ol > li::before { content: none !important; background: none !important; }
+
+/* ── botão copiar ── */
+#cs-content pre { position: relative; }
+.cs-copy {
+  position: absolute; top: 6px; right: 6px;
+  font: inherit; font-size: 12px; line-height: 1; cursor: pointer;
+  padding: 3px 8px; border-radius: 4px; color: #e6edf3;
+  background: rgba(127,127,127,.2); border: 1px solid rgba(127,127,127,.45);
+  opacity: 0; transition: opacity .15s;
+}
+#cs-content pre:hover .cs-copy, .cs-copy:focus { opacity: 1; }
+.cs-copy.is-done { border-color: currentColor; opacity: 1; }
+
+/* ── índice automático (TOC) ── */
+.cs-toc { margin: 1.5em 0; padding: .6em 1em; border: 1px solid rgba(127,127,127,.35); border-radius: 6px; }
+.cs-toc__title { margin: 0 0 .4em; font-size: .75em; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; opacity: .7; }
+.cs-toc__list { margin: 0; padding: 0; list-style: none; font-size: .95em; }
+.cs-toc__list li { margin: .2em 0; }
+.cs-toc__list li::before, .cs-toc__list li::marker { content: none !important; background: none !important; }
+.cs-toc__list .cs-toc--h3 { padding-left: 1em; opacity: .8; }
+.cs-toc__list a { color: inherit; }
+
+/* ── neutraliza o marcador do tema nos <li> de UI ── */
+.cs-tagcloud, .cs-list, .cs-tags--sm { list-style: none; }
+.cs-tagcloud > li, .cs-list > li, .cs-tags--sm > li { list-style: none; background-image: none !important; padding-left: 0; margin-left: 0; }
+.cs-tagcloud > li::before, .cs-list > li::before, .cs-tags--sm > li::before,
+.cs-tagcloud > li::marker, .cs-list > li::marker, .cs-tags--sm > li::marker { content: none !important; display: none !important; background: none !important; }
+
+/* ── índice geral (/cheatsheets/) ── */
+.cs-search { width: 100%; box-sizing: border-box; padding: .5em .7em; font: inherit; color: inherit; background: rgba(127,127,127,.1); border: 1px solid rgba(127,127,127,.4); border-radius: 6px; }
+.cs-tagcloud { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: .8em 0; }
+.cs-tagbtn { font: inherit; font-size: .85em; cursor: pointer; padding: 2px 10px; border-radius: 999px; color: inherit; background: rgba(127,127,127,.12); border: 1px solid rgba(127,127,127,.4); }
+.cs-tagbtn:hover { border-color: currentColor; }
+.cs-tagbtn.is-active { background: rgba(127,127,127,.4); }
+.cs-group__title { font-size: 1em; margin: 1.5em 0 .6em; opacity: .7; text-transform: uppercase; letter-spacing: .05em; }
+.cs-list { padding: 0; margin: 0; display: grid; gap: 8px; }
+.cs-card { padding: .7em 1em; border: 1px solid rgba(127,127,127,.35); border-radius: 6px; }
+.cs-card__link { display: block; text-decoration: none; color: inherit; }
+.cs-card__title { font-weight: 700; }
+.cs-card__summary { display: block; margin-top: .2em; font-size: .9em; opacity: .75; }
+.cs-card__meta { margin-top: .4em; display: flex; flex-wrap: wrap; gap: 12px; font-size: .8em; opacity: .7; }
+.cs-tags--sm { display: flex; flex-wrap: wrap; gap: 5px; padding: 0; margin: .4em 0 0; font-size: .8em; opacity: .8; }
+.cs-empty { opacity: .7; padding: 1.2em 0; }
+
+@media (max-width: 600px) { #cs-content table { display: block; overflow-x: auto; } .cs-copy { opacity: 1; } }

@@ -16,12 +16,17 @@ paginate: 3
 paginate_path: /page/:num/
 
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
+  - scope:
+      path: ""
+      type: "cheatsheets"
+    values:
+      layout: "cheatsheet"
+      toc: true
 
 future: true
 plugins:
@@ -30,6 +35,16 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jeyll-avatar
+
+collections:
+  cheatsheets:
+    output: true
+    permalink: /cheatsheets/:path/
+
+kramdown:
+  input: GFM
+  auto_ids: true
+
 
 # Custom variables
 owner : "s3mPr1linux"
