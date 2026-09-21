@@ -6,6 +6,8 @@ tags:        [cwes, hack-the-box]
 updated:     2026-05-21
 ---
 
+{% raw %}
+
 HTB CWES cheet sheet. This section describes the commands learned during the CWES, omitting the most basic commands and theoretical parts.
 
 **Information Gathering**
@@ -565,3 +567,5 @@ RedBlock@htb[/htb]$ gobuster dir -u <http://10.129.204.231/> -w /tmp/list.txt -x
 ```
 RedBlock@htb[/htb]$ ldapsearch -H ldap://ldap.example.com:389 -D "cn=admin,dc=example,dc=com" -w secret123 -b "ou=people,dc=example,dc=com" "(mail=john.doe@example.com)"
 ```
+
+{% endraw %}

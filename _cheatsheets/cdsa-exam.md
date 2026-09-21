@@ -6,6 +6,8 @@ tags:        [cdsa, hack-the-box]
 updated:     2026-05-21
 ---
 
+{% raw %}
+
 **1. Security Monitoring & SIEM Fundamentals**
 
 #### **SIEM\_Visualization\_Failed\_Logons\_All\_Users**
@@ -8655,3 +8657,5 @@ In this segment, we should dive deeper into the initial stakeholder impact analy
 | `April 22nd, 2019, 05:21:20` | After ensuring that `WKST01.samplecorp.com` was malware-free, the SOC team restored the system from a verified backup. |
 | `April 22nd, 2019, 05:58:50` | After ensuring that `HR01.samplecorp.com` was malware-free, the SOC team restored the system from a verified backup. |
 | `April 22nd, 2019, 06:33:44` | The development team rolled out an emergency patch for the `buffer overflow` vulnerability in the proprietary HR application, which was then deployed to `HR01.samplecorp.com`. |
+
+{% endraw %}

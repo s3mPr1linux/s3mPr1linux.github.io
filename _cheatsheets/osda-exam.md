@@ -6,6 +6,8 @@ tags:        [osda, offsec]
 updated:     2026-07-26
 ---
 
+{% raw %}
+
 ## SOC-200 / OSDA Cheatsheet
 
 Detection-focused reference for OffSec's **SOC-200** course and the **OffSec Defense Analyst (OSDA)** exam.
@@ -435,3 +437,5 @@ event.code: "4662" and winlog.event_data.Properties: (*1131f6aa-9c07-11d1-f79f-0
 ---
 
 *Fill in host-specific field names as you meet them in the labs — encryption-type codes,*`winlog.event_data.*`*names, and dataset strings can vary by ingest pipeline. Verify each query against your actual ELK index before relying on it in the exam.*
+
+{% endraw %}

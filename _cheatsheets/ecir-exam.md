@@ -6,6 +6,8 @@ tags:        [ecir, ine]
 updated:     2026-07-26
 ---
 
+{% raw %}
+
 ## eCIR Field Guide (Full Edition) — Certified Incident Responder (eLearnSecurity / INE)
 
 A comprehensive study, reference, and methodology pack for the **eCIR** exam — incident investigation, log analysis (Splunk & Elastic), PCAP/network-traffic analysis, endpoint & memory forensics, and a fully worked example.
@@ -1049,3 +1051,5 @@ index=main EventCode=4624 Logon_Type IN (3,10) Account_Name=<compromised_user>
 ---
 
 *End of guide. All queries and filters are templates — validate against the actual data set before relying on them. Appendix A is illustrative training material.*
+
+{% endraw %}

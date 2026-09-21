@@ -6,6 +6,8 @@ tags:        [arte, hacktricks]
 updated:     2026-07-27
 ---
 
+{% raw %}
+
 ## ARTE Field Guide — AWS Red Team Expert (HackTricks) · Large Documented Edition
 
 The most complete build of this reference for the HackTricks **AWS Red Team Expert (ARTE)** path. Every service section gives you **more commands with documentation of what each call does**, the **misconfig/privesc vector**, a **worked example**, and **Detect & Harden**. It maps **Pacu** modules to each phase, shows **example CloudTrail event JSON**, and ends with **two full annotated attack chains** (whitebox/internal SSRF chain *and* an external/unauthenticated chain).
@@ -754,3 +756,5 @@ run detection__enum_services          # see logging posture
 ---
 
 *End of guide. All commands are enumeration/verification templates for authorized AWS accounts only. Every offensive vector is paired with "Detect & Harden," and both worked chains demonstrate the ARTE thesis: chains are built from single fixable misconfigurations — prove the chain, then remediate every hop.*
+
+{% endraw %}

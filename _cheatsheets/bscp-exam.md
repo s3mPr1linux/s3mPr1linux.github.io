@@ -6,6 +6,8 @@ tags:        [bscp, portswigger]
 updated:     2026-07-27
 ---
 
+{% raw %}
+
 ## BSCP Master Field Guide — Burp Suite Certified Practitioner (PortSwigger)
 
 The large, all-payloads reference for the **BSCP** practical exam, organized by Web Security Academy topic. Every category lists detection, the full payload set (contexts + filter/WAF bypasses + DB/engine variants), how to weaponize to a stage, and the finisher. Your lab-tested payloads are marked ✅.
@@ -807,3 +809,5 @@ POST /admin/delete    body: username=carlos     (with the admin session/cookie y
 ---
 
 *End of guide. All payloads target the PortSwigger Web Security Academy / BSCP exam and authorized targets only. Replace*`<LAB>`*/*`<COLLAB>`*/*`<EXPLOIT>`*. Recognize the vuln fast (§31) → canonical payload (relevant §) → stage finisher (§29). Chains in §30 mirror the exam's shape.*
+
+{% endraw %}

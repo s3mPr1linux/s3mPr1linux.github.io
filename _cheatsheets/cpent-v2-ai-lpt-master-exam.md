@@ -6,6 +6,8 @@ tags:        [ec-council]
 updated:     2026-07-28
 ---
 
+{% raw %}
+
 ## CPENT v2 / LPT Master Field Guide (Complete Edition) — Certified Penetration Testing Professional (EC-Council)
 
 The large, command-complete reference for **CPENT v2 (AI) / LPT Master**, organized around the five ranges — **Active Directory, Binary, IoT, Web, CTF** — with a deep **Pivoting & Double-Pivot** core, expanded AD attacks, proxychains/reliability guidance, and a **full worked engagement chain**. Field-tested pivoting & AD notes are folded in.
@@ -746,3 +748,5 @@ Serve/catch: python3 -m http.server 80 ; nc -lvnp 443
 ---
 
 *End of guide. All commands are for the authorized CPENT ranges / your lab only;****the IPs are placeholder examples****— substitute your range's addressing. CPENT/LPT Master is won on methodology, reliable pivoting/double-pivoting into segmented networks, chaining across the five ranges, and a clear professional report — document every step with evidence as you go.*
+
+{% endraw %}

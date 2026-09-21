@@ -6,6 +6,8 @@ tags:        [cartp, altered-security]
 updated:     2026-05-21
 ---
 
+{% raw %}
+
 ## CARTP-Notes
 
 This repository contains professionally curated notes created during preparation for the CARTP (Certified Azure Red Team Professional) certification. These notes are designed to simplify complex Azure AD and cloud attack concepts while maintaining practical, real-world offensive tradecraft used during modern cloud security assessments.
@@ -2571,3 +2573,5 @@ CertificateThumbprint <Thumbprint> -ApplicationId <ID>
 ## **Deployment Modification**
 
 - If we have persistent access to external resources like GitHub repos that are a part of deployment chain, it will be possible to persist in the target tenant.
+
+{% endraw %}

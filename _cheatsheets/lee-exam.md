@@ -6,6 +6,8 @@ tags:        [lee, hacktricks]
 updated:     2026-07-27
 ---
 
+{% raw %}
+
 ## LEE Master Field Guide — Linux Exploitation Expert (HackTricks)
 
 The large, in-depth educational study companion for the HackTricks **Linux Exploitation Expert (LEE)** path. Binary-exploitation learning reference across workflow/tooling → x86\_64 userland → heap → AArch64 → kernel → V8/browser. For each area: **how it works (mechanism) → the standard workflow & tools → the named techniques with illustrative teaching snippets → debugging tips & pitfalls.** Oriented to **CTF binaries, lab VMs, and the exam**.
@@ -700,3 +702,5 @@ Browser     : d8 (V8), --allow-natives-syntax, %DebugPrint
 ---
 
 *End of guide. This is a conceptual/methodology study reference for the LEE syllabus — build and practice everything against CTF binaries and lab VMs you own. It maps techniques and tools the way the public HackTricks / how2heap / CTF corpus teaches them; for full working code per technique, follow those step-by-step labs in your own sandbox.*
+
+{% endraw %}

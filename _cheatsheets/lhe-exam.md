@@ -6,6 +6,8 @@ tags:        [lhe, hacktricks]
 updated:     2026-07-26
 ---
 
+{% raw %}
+
 ## LHE Field Guide — Linux Hardening Expert (HackTricks) · Professional Edition
 
 A practical, example-driven reference for the HackTricks **Linux Hardening Expert (LHE)** path. Every topic follows the same professional structure:
@@ -701,3 +703,5 @@ cat /proc/1/cgroup; ls -la /.dockerenv 2>/dev/null
 ---
 
 *End of guide. All commands are enumeration/verification/lab templates — run them only on systems you are authorized to assess, and apply the paired "Harden"/"Fix" steps to remediate whatever they reveal.*
+
+{% endraw %}

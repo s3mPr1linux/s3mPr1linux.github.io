@@ -6,6 +6,8 @@ tags:        [btl1, centri]
 updated:     2026-07-26
 ---
 
+{% raw %}
+
 *These notes will come handy in exam.*
 
 ## SOC Fundamentals
@@ -585,3 +587,5 @@ DeepBlue will point at the local system's Security or System event logs directly
 
 Set-ExecutionPolicy Bypass -Scope CurrentUser
 ```
+
+{% endraw %}
