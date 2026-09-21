@@ -1,19 +1,21 @@
-<header>
-  <div>
-    <a href="{{ "/" | prepend: site.baseurl | replace: '//', '/' }}">
-    {% assign owner_first_name = site.owner | split: " " %}
-    <h1>{{ owner_first_name[0] | downcase }}</h1>
+<header class="cyber-header">
+  {% include nav-icons.svg %}
+  <div class="cyber-header__inner">
+    <a class="cyber-logo" href="{{ "/" | prepend: site.baseurl | replace: '//', '/' }}">
+      <img src="{{ "/assets/logo-cyber.jpg" | prepend: site.baseurl | replace: '//', '/' }}" alt="s3mpr1linux" class="logo">
     </a>
-    <div class="header-logo">
-     <img src="/assets/logo3.png" alt="Logo" class="logo">
-    </div>
-    <a href="https://s3mpr1linux.github.io/" target="_blank" rel="noopener noreferrer">Home</a>
-    <a href="https://github.com/s3mPr1linux/" target="_blank" rel="noopener noreferrer">GitHub</a>
-    <a href="https://app.hackthebox.com/public/teams/overview/6937" target="_blank" rel="noopener noreferrer">HTB</a>
-    <a href="https://tryhackme.com/p/s3mPr1linux" target="_blank" rel="noopener noreferrer">THM</a>
-    <a href="https://x.com/s3mPr1linux" target="_blank" rel="noopener noreferrer">X</a>
-    <div class="header-links">
+
+    {% assign owner_first_name = site.owner | split: " " %}
+    {% assign brand = owner_first_name[0] | downcase %}
+    <h1 class="cyber-title" data-text="{{ brand }}">{{ brand }}</h1>
+
+    <nav class="cyber-nav" aria-label="Navegação principal">
+      <a href="{{ "/" | prepend: site.baseurl | replace: '//', '/' }}"><svg class="ico"><use href="#i-home"></use></svg>home</a>
+      <a href="https://github.com/s3mPr1linux/" target="_blank" rel="noopener noreferrer"><svg class="ico"><use href="#i-github"></use></svg>github</a>
+      <a href="https://app.hackthebox.com/public/teams/overview/6937" target="_blank" rel="noopener noreferrer"><svg class="ico"><use href="#i-htb"></use></svg>htb</a>
+      <a href="https://tryhackme.com/p/s3mPr1linux" target="_blank" rel="noopener noreferrer"><svg class="ico"><use href="#i-thm"></use></svg>thm</a>
+      <a href="https://x.com/s3mPr1linux" target="_blank" rel="noopener noreferrer"><svg class="ico"><use href="#i-x"></use></svg>x</a>
       {% include links.html %}
-    </div>
+    </nav>
   </div>
 </header>

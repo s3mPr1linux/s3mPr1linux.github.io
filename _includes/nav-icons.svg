@@ -1,0 +1,13 @@
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7M5 9.5V20h14V9.5"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 9l-4 3 4 3M15 9l4 3-4 3"/></symbol>
+  <symbol id="i-htb" viewBox="0 0 24 24"><path d="M6 3v18M6 4h12l-3 4 3 4H6"/></symbol>
+  <symbol id="i-thm" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4-3 7-7 9-4-2-7-5-7-9V6z"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-posts" viewBox="0 0 24 24"><path d="M14 3H6v18h12V7zM14 3v4h4M9 12h6M9 16h6"/></symbol>
+  <symbol id="i-linux" viewBox="0 0 24 24"><path d="M3 5h18v14H3zM7 9l3 3-3 3M13 15h4"/></symbol>
+  <symbol id="i-cheatsheets" viewBox="0 0 24 24"><path d="M5 7h1.5M5 12h1.5M5 17h1.5M10 7h9M10 12h9M10 17h9"/></symbol>
+  <symbol id="i-rss" viewBox="0 0 24 24"><path d="M5 12a7 7 0 017 7M5 6a13 13 0 0113 13"/><circle cx="5.5" cy="18.5" r="1.4" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-certs" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M9 13l-1 8 4-2 4 2-1-8"/></symbol>
+  <symbol id="i-ms" viewBox="0 0 24 24"><path d="M3 5h18v11H3zM9 20h6M12 16v4"/></symbol>
+</svg>
