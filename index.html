@@ -2,12 +2,13 @@
 layout: default
 ---
 
-<ul>
+<ul class="post-feed">
     {% for post in paginator.posts %}
-      <li>
-          <h2><a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">{{ post.title }}</a></h2>
-          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
-          <p>{{ post.content | strip_html | truncatewords:50 }}</p>
+      <li class="post-card">
+          <h2 class="post-card__title"><a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">{{ post.title }}</a></h2>
+          <time class="post-card__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
+          <p class="post-card__excerpt">{{ post.content | strip_html | truncatewords:30 }}</p>
+          <a class="post-card__more" href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">read more ▸</a>
       </li>
     {% endfor %}
 </ul>
