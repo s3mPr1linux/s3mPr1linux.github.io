@@ -43,53 +43,45 @@ header.cyber-header::after {
   text-shadow: 0 0 4px rgba(24,255,109,.8), 0 0 12px rgba(24,255,109,.5), 0 0 26px rgba(24,255,109,.3);
 }
 .cyber-title::before, .cyber-title::after {
-  content: attr(data-text); position: absolute; left: 0; top: 0; width: 100%;
-  opacity: 0; pointer-events: none;
+  content: attr(data-text); position: absolute; left: 0; top: 0; width: 100%; opacity: 0; pointer-events: none;
 }
-.cyber-title:hover::before {
-  opacity: .9; color: $cyber-cyan; text-shadow: 0 0 8px rgba(0,229,255,.7);
-  animation: cyber-glitch-1 .5s steps(2) infinite;
-}
-.cyber-title:hover::after {
-  opacity: .9; color: $cyber-magenta; text-shadow: 0 0 8px rgba(255,46,136,.7);
-  animation: cyber-glitch-2 .5s steps(2) infinite;
-}
+.cyber-title:hover::before { opacity: .9; color: $cyber-cyan; text-shadow: 0 0 8px rgba(0,229,255,.7); animation: cyber-glitch-1 .5s steps(2) infinite; }
+.cyber-title:hover::after  { opacity: .9; color: $cyber-magenta; text-shadow: 0 0 8px rgba(255,46,136,.7); animation: cyber-glitch-2 .5s steps(2) infinite; }
 @keyframes cyber-glitch-1 {
-  0%{clip-path:inset(0 0 70% 0);transform:translate(-2px,-1px)}
-  50%{clip-path:inset(40% 0 20% 0);transform:translate(2px,1px)}
-  100%{clip-path:inset(70% 0 0 0);transform:translate(-1px,1px)}
+  0%{clip-path:inset(0 0 70% 0);transform:translate(-2px,-1px)} 50%{clip-path:inset(40% 0 20% 0);transform:translate(2px,1px)} 100%{clip-path:inset(70% 0 0 0);transform:translate(-1px,1px)}
 }
 @keyframes cyber-glitch-2 {
-  0%{clip-path:inset(60% 0 10% 0);transform:translate(2px,1px)}
-  50%{clip-path:inset(20% 0 50% 0);transform:translate(-2px,-1px)}
-  100%{clip-path:inset(10% 0 80% 0);transform:translate(1px,-1px)}
+  0%{clip-path:inset(60% 0 10% 0);transform:translate(2px,1px)} 50%{clip-path:inset(20% 0 50% 0);transform:translate(-2px,-1px)} 100%{clip-path:inset(10% 0 80% 0);transform:translate(1px,-1px)}
 }
 .cyber-nav {
-  display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
-  gap: 6px 18px; margin-top: 6px;
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px 18px; margin-top: 6px;
 }
 .cyber-nav a {
+  display: inline-flex; align-items: center; gap: .4em;
   color: $cyber-green; text-decoration: none; text-transform: lowercase;
   font-family: $cyber-mono; font-size: 15px; letter-spacing: 1px;
   text-shadow: 0 0 6px rgba(24,255,109,.35); transition: color .15s, text-shadow .15s;
 }
 .cyber-nav a:hover { color: #fff; text-shadow: 0 0 8px rgba(24,255,109,.9), 0 0 16px rgba(24,255,109,.6); }
+.cyber-nav .ico {
+  width: 1.05em; height: 1.05em; flex: 0 0 auto;
+  fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+  filter: drop-shadow(0 0 4px rgba(24,255,109,.4));
+}
+.cyber-nav a:hover .ico { filter: drop-shadow(0 0 6px rgba(24,255,109,.9)); }
+/* ícone de imagem (pássaro do Twitter): verde via filtro, alinhado aos de linha */
+.cyber-nav .ico-img {
+  width: 1.15em; height: 1.15em; border-radius: 50%; fill: initial; stroke: none;
+  filter: hue-rotate(-72deg) saturate(1.1) brightness(.8) drop-shadow(0 0 3px rgba(24,255,109,.35));
+}
+.cyber-nav a:hover .ico-img { filter: hue-rotate(-72deg) saturate(1.2) brightness(1.15) drop-shadow(0 0 6px rgba(24,255,109,.9)); }
 .cyber-nav .header-link {
-  display: inline; margin: 0; padding: 0; font-family: $cyber-mono;
-  font-size: 15px; font-weight: normal; letter-spacing: 1px; color: inherit; text-shadow: inherit;
+  display: inline; margin: 0; padding: 0;
+  font-family: $cyber-mono; font-size: 15px; font-weight: normal; letter-spacing: 1px;
+  color: inherit; text-shadow: inherit;
 }
 @media (max-width: 600px) {
   .cyber-logo .logo { max-height: 88px; }
   .cyber-nav { gap: 4px 12px; }
   .cyber-nav a, .cyber-nav .header-link { font-size: 13px; }
 }
-
-/* ícones da navegação */
-.cyber-nav a { display: inline-flex; align-items: center; gap: .4em; }
-.cyber-nav .ico {
-  width: 1.05em; height: 1.05em; flex: 0 0 auto;
-  fill: none; stroke: currentColor; stroke-width: 2;
-  stroke-linecap: round; stroke-linejoin: round;
-  filter: drop-shadow(0 0 4px rgba(24,255,109,.4));
-}
-.cyber-nav a:hover .ico { filter: drop-shadow(0 0 6px rgba(24,255,109,.9)); }
