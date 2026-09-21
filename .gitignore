@@ -32,3 +32,9 @@ Gemfile.lock
 .mise.toml
 vendor/
 serve.sh
+_site/
+.jekyll-cache/
+Gemfile
+Gemfile.lock
+.mise.toml
+vendor/

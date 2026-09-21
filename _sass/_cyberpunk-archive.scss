@@ -1,0 +1,25 @@
+/* ===== Arquivo de posts (por ano) — estilo terminal ===== */
+$arc-green: $conifer;
+
+.post-archive h3 {
+  color: $arc-green;
+  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  letter-spacing: 1px; font-size: 1.15rem;
+  margin: 1.6em 0 .6em; padding-bottom: .3em;
+  border-bottom: 1px dashed rgba(24,255,109,.3);
+  text-shadow: 0 0 6px rgba(24,255,109,.3);
+}
+.post-archive h3::before { content: "# "; opacity: .6; }
+.post-archive ul { list-style: none; margin: 0 0 1em; padding: 0; }
+.post-archive li {
+  list-style: none; background-image: none !important;
+  display: flex; gap: .7em; align-items: baseline;
+  padding: .3em .6em; border-left: 2px solid transparent;
+  transition: border-color .15s, background .15s;
+}
+.post-archive li::marker { content: none; }
+.post-archive li:hover { border-left-color: $arc-green; background: rgba(24,255,109,.05); }
+.post-archive time { color: #90a959; font-size: .85em; letter-spacing: .5px; white-space: nowrap; min-width: 5.5em; flex: 0 0 auto; }
+.post-archive a { color: $arc-green; text-decoration: none; text-shadow: 0 0 6px rgba(24,255,109,.3); }
+.post-archive a::before { content: "› "; opacity: .55; }
+.post-archive li:hover a { color: #fff; text-shadow: 0 0 8px rgba(24,255,109,.9), 0 0 16px rgba(24,255,109,.5); }

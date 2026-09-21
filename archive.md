@@ -3,7 +3,7 @@ layout: page
 title: Archive
 ---
 
-<section>
+<section class="post-archive">
   {% if site.posts[0] %}
 
     {% capture currentyear %}{{ 'now' | date: "%Y" }}{% endcapture %}
